@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Fansite</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav-link">
+            <li><a href="index.html">Acceuil</a></li>
+            <li><a href="biographie.html">Discographie</a></li>
+            <li><a href="evenement.html">Evénement</a></li>
+            <li><a href="contact.html">Formulaire</a></li>
+        </ul>
+    </nav>
+    <header>
+        <section class="section-header">
+            <h1>Eminem</h1>
+            <p>Benvenue sur le premier fan site d'Eminem, vous pouvez visiter le site pour être à l'actualité des événements et des sorties du rappeur.</p>
+        </section>
+    </header>
+    <main>
+        <section class="actualitee_index">
+            <h1> L'HISTOIRE D'EMINEM : DU GHETTO A HOLLYWOOD</h1>
+            <p><span class="first_letter">E</span>minem, également connu sous le nom de Slim Shady,<br> est un artiste incontournable de la scène musicale mondiale. Avec plusieurs albums à son actifs <br>
+            ( <span class="liens"><a href="./biographie.html">liste des albums</a></span> ), des millions de ventes et des dizaines de récompenses. Il est considéré comme <b>l'un des plus grands rapeurs de tous les temps.</b> <br> Son style unique sa rhétorique remarquable et sa capacité à aborder des sujets controversés on tous contribué à sa réussite.</p>
+            <p>pour en savoir plus sur l'article, cliquez : <span class="liens"><a href="https://www.rhapsody.fr/blog/eminem/" target="_blank">ici</a></span></p>
+        </section>
+
+        <div class="container-slider">
+            <div class="slider-container">
+                <img class="slider-image" src="./images/eminemUn.jpeg" alt="Image 1">
+                <img class="slider-image" src="./images/images.jpeg" alt="Image 2">
+            </div>
+            
+            <div class="slider-nav">
+                <button onclick="previousSlide()">Précédent</button>
+                <button onclick="nextSlide()">Suivant</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <section>
+            <h3>Réseau sociaux</h3>
+            <p>voici les réseaux socieau du rappeur , abonnez-vous.</p>
+            <ul>
+                <li><a href="https://twitter.com/Eminem?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="./images/twitter.png" alt="logo qui redirige vers twitter" ></a></li>
+                <li><a href="https://open.spotify.com/intl-fr/artist/7dGJo4pcD2V6oG8kP0tJRR" target="_blank"><img src="./images/spotify.png" alt="logo qui redirige vers spotify" ></a></li>
+                <li><a href="https://www.youtube.com/user/EminemVevo" target="_blank"><img src="./images/youtube.png" alt="logo qui redirige vers youtube" ></a></li>
+            </ul>
+        </section>
+    </footer>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-image');
+
+        function showSlide(n) {
+            if (n >= slides.length) {
+                currentSlide = 0;
+            } else if (n < 0) {
+                currentSlide = slides.length - 1;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+
+            slides[currentSlide].style.display = 'block';
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
